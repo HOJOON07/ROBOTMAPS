@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect } from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { mapActions } from "./slice";
 
 function App() {
+  const robotMaps = useSelector((state) => state.maps);
+
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>안녕</div>
+      <button
+        onClick={() => {
+          dispatch(mapActions.get());
+        }}
+      >
+        겟
+      </button>
+      <button
+        onClick={() => {
+          dispatch(mapActions.getMapImg());
+        }}
+      >
+        이미지 겟
+      </button>
+    </>
   );
 }
 
