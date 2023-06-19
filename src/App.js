@@ -26,6 +26,13 @@ function App() {
       >
         이미지 겟
       </button>
+      <button
+        onClick={() => {
+          dispatch(mapActions.getMapImg());
+        }}
+      >
+        이미지 겟
+      </button>
     </>
   );
 }
